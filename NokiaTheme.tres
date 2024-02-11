@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://b5x70xlpu3we"]
+
+[ext_resource type="FontFile" uid="uid://b48p14yw5xast" path="res://Font/NOKIAFC22.TTF" id="1_0ovvt"]
+
+[resource]
+default_font = ExtResource("1_0ovvt")
+default_font_size = 8
+Label/colors/font_color = Color(0.262745, 0.321569, 0.239216, 1)
