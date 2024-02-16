@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://drmk1jxllfdcp"
+path="res://.godot/imported/good3.wav-75c62c7fdc6b7ed8f40071395f54f6ee.sample"
+
+[deps]
+
+source_file="res://Audio/Trix Soundpack/good3.wav"
+dest_files=["res://.godot/imported/good3.wav-75c62c7fdc6b7ed8f40071395f54f6ee.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

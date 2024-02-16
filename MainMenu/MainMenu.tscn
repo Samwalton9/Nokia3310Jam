@@ -1,0 +1,62 @@
+[gd_scene load_steps=8 format=3 uid="uid://b8x5en1a2euqv"]
+
+[ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_bpydp"]
+[ext_resource type="Texture2D" uid="uid://h84lf6y7tlyq" path="res://MainMenu/MainMenu.png" id="1_od12d"]
+[ext_resource type="Theme" path="res://NokiaTheme.tres" id="2_rlaum"]
+[ext_resource type="AudioStream" uid="uid://drmk1jxllfdcp" path="res://Audio/Trix Soundpack/good3.wav" id="4_f0sq3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l5whi"]
+atlas = ExtResource("1_od12d")
+region = Rect2(0, 0, 84, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwff6"]
+atlas = ExtResource("1_od12d")
+region = Rect2(84, 0, 84, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_y1e7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l5whi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwff6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="MainMenu" type="Node2D"]
+script = ExtResource("1_bpydp")
+
+[node name="Background" type="AnimatedSprite2D" parent="."]
+position = Vector2(42, 24)
+sprite_frames = SubResource("SpriteFrames_y1e7j")
+autoplay = "default"
+frame_progress = 0.394822
+
+[node name="StartControl" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="StartLabel" type="Label" parent="StartControl"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -12.0
+offset_top = -20.0
+offset_right = 12.0
+offset_bottom = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_rlaum")
+text = "Start"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f0sq3")
