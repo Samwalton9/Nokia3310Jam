@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://j62xfgh712l"]
+[gd_scene load_steps=12 format=3 uid="uid://j62xfgh712l"]
 
 [ext_resource type="Texture2D" uid="uid://7w46ljc3436" path="res://Character/character.png" id="1_1uh0x"]
 [ext_resource type="Script" path="res://Character/character.gd" id="1_imqmy"]
@@ -46,9 +46,66 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lj38g"]
+size = Vector2(3.9, 4.9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_brbf5"]
+size = Vector2(0.9, 4.9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dauoy"]
+size = Vector2(3.9, 0.9)
+
 [node name="Character" type="Node2D"]
 script = ExtResource("1_imqmy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.5, 2.08165e-12)
+position = Vector2(2.08165e-12, 0.5)
 sprite_frames = SubResource("SpriteFrames_8muy3")
+
+[node name="CharacterArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-0.5, -2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/CharacterArea"]
+position = Vector2(0.5, 2.08165e-12)
+shape = SubResource("RectangleShape2D_lj38g")
+
+[node name="RightArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-0.5, -2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/RightArea"]
+position = Vector2(3, 0)
+shape = SubResource("RectangleShape2D_brbf5")
+debug_color = Color(0.752941, 0.133333, 0.298039, 0.419608)
+
+[node name="LeftArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-0.5, -2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/LeftArea"]
+position = Vector2(-2, 0)
+shape = SubResource("RectangleShape2D_brbf5")
+debug_color = Color(0.752941, 0.133333, 0.298039, 0.419608)
+
+[node name="UpArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-0.5, -2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/UpArea"]
+position = Vector2(0.5, -3)
+shape = SubResource("RectangleShape2D_dauoy")
+debug_color = Color(0.752941, 0.133333, 0.298039, 0.419608)
+
+[node name="DownArea" type="Area2D" parent="AnimatedSprite2D"]
+position = Vector2(-0.5, -2.08165e-12)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/DownArea"]
+position = Vector2(0.5, 3)
+shape = SubResource("RectangleShape2D_dauoy")
+debug_color = Color(0.752941, 0.133333, 0.298039, 0.419608)
+
+[connection signal="area_entered" from="AnimatedSprite2D/RightArea" to="." method="_on_right_area_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D/RightArea" to="." method="_on_right_area_area_exited"]
+[connection signal="area_entered" from="AnimatedSprite2D/LeftArea" to="." method="_on_left_area_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D/LeftArea" to="." method="_on_left_area_area_exited"]
+[connection signal="area_entered" from="AnimatedSprite2D/UpArea" to="." method="_on_up_area_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D/UpArea" to="." method="_on_up_area_area_exited"]
+[connection signal="area_entered" from="AnimatedSprite2D/DownArea" to="." method="_on_down_area_area_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D/DownArea" to="." method="_on_down_area_area_exited"]

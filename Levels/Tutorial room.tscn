@@ -1,9 +1,61 @@
-[gd_scene load_steps=2 format=3 uid="uid://0v7bt482xwl0"]
+[gd_scene load_steps=9 format=3 uid="uid://0v7bt482xwl0"]
 
 [ext_resource type="Texture2D" uid="uid://bqayuggv2ddh" path="res://Levels/Tutorial room.png" id="1_6wren"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v1hs8"]
+size = Vector2(87, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5x8g1"]
+size = Vector2(3, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xy1bb"]
+size = Vector2(38, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hpilb"]
+size = Vector2(3, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tw4b2"]
+size = Vector2(3, 23)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_uduap"]
+size = Vector2(88, 3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7b0rp"]
+size = Vector2(3, 13)
 
 [node name="TutorialRoom" type="Node2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(125, 64)
 texture = ExtResource("1_6wren")
+metadata/_edit_lock_ = true
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80.5, 55.5)
+shape = SubResource("RectangleShape2D_v1hs8")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(122.5, 45)
+shape = SubResource("RectangleShape2D_5x8g1")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(140, 34.5)
+shape = SubResource("RectangleShape2D_xy1bb")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(158.5, 45)
+shape = SubResource("RectangleShape2D_hpilb")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(37.5, 65.5)
+shape = SubResource("RectangleShape2D_tw4b2")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(80, 76.5)
+shape = SubResource("RectangleShape2D_uduap")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(122.5, 81.5)
+shape = SubResource("RectangleShape2D_7b0rp")

@@ -8,4 +8,4 @@
 [node name="TutorialRoom" parent="." instance=ExtResource("1_esrke")]
 
 [node name="Character" parent="." instance=ExtResource("3_la45k")]
-position = Vector2(50, 66)
+position = Vector2(47, 66)
