@@ -1,15 +1,16 @@
-[gd_scene load_steps=7 format=3 uid="uid://cg1umnjduq8ke"]
+[gd_scene load_steps=8 format=3 uid="uid://cg1umnjduq8ke"]
 
 [ext_resource type="Script" path="res://MainScene.gd" id="1_l3kck"]
 [ext_resource type="PackedScene" uid="uid://b8x5en1a2euqv" path="res://MainMenu/MainMenu.tscn" id="1_uuqs6"]
 [ext_resource type="Texture2D" uid="uid://bw7j5sb3dnb8b" path="res://Transition.png" id="3_qq4oc"]
+[ext_resource type="Script" path="res://Camera2D.gd" id="4_jqyxt"]
 
 [sub_resource type="Animation" id="Animation_55ckc"]
 resource_name = "transition_start"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionSprite:position")
+tracks/0/path = NodePath("CanvasLayer/TransitionSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -24,7 +25,7 @@ resource_name = "transition_end"
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("TransitionSprite:position")
+tracks/0/path = NodePath("CanvasLayer/TransitionSprite:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -47,14 +48,21 @@ script = ExtResource("1_l3kck")
 
 [node name="MainMenu" parent="ActiveScene" instance=ExtResource("1_uuqs6")]
 
-[node name="TransitionSprite" type="Sprite2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(42, 24)
+process_callback = 0
+script = ExtResource("4_jqyxt")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="TransitionSprite" type="Sprite2D" parent="CanvasLayer"]
 position = Vector2(141, 24)
 texture = ExtResource("3_qq4oc")
 
-[node name="TransitionAnimation" type="AnimationPlayer" parent="TransitionSprite"]
-root_node = NodePath("../..")
+[node name="TransitionAnimation" type="AnimationPlayer" parent="CanvasLayer/TransitionSprite"]
+root_node = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_wv14c")
 }
 
-[connection signal="animation_finished" from="TransitionSprite/TransitionAnimation" to="." method="_on_transition_animation_animation_finished"]
+[connection signal="animation_finished" from="CanvasLayer/TransitionSprite/TransitionAnimation" to="." method="_on_transition_animation_animation_finished"]

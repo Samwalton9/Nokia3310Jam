@@ -4,7 +4,7 @@ var scene_path_for_transition : String = ""
 
 var loaded_level : Node = null
 
-@onready var transition_anim := $TransitionSprite/TransitionAnimation
+@onready var transition_anim := $CanvasLayer/TransitionSprite/TransitionAnimation
 
 
 # Called when the node enters the scene tree for the first time.
@@ -31,3 +31,6 @@ func _on_transition_animation_animation_finished(anim_name):
 		loaded_level = scene_instance
 
 		transition_anim.play("transition_end")
+
+	if anim_name == "transition_end":
+		Events.scene_transition_end.emit()
