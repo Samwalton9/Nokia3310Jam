@@ -5,16 +5,20 @@ enum {
 	ACTIVE
 }
 
-var up_blocked = false
-var down_blocked = false
-var left_blocked = false
-var right_blocked = false
+var up_blocked := false
+var down_blocked := false
+var left_blocked := false
+var right_blocked := false
 
-@onready var state = INACTIVE
+var in_laser := false
+
+@onready var state := INACTIVE
+
 
 func _ready():
 	Events.scene_transition_end.connect(_on_scene_transition_end)
 	Globals.character_position = position
+
 
 func _physics_process(_delta):
 	match state:
@@ -32,9 +36,15 @@ func _physics_process(_delta):
 				position.y -= 1
 				moved()
 
+
 func moved() -> void:
 	Globals.character_position = position
 	Events.moved.emit()
+
+	if in_laser:
+		state = INACTIVE
+		$AnimatedSprite2D.play()
+
 
 func _on_scene_transition_end():
 	state = ACTIVE
@@ -70,3 +80,15 @@ func _on_down_area_area_entered(_area):
 
 func _on_down_area_area_exited(_area):
 	down_blocked = false
+
+
+func _on_character_area_area_entered(area):
+	in_laser = true
+
+
+func _on_character_area_area_exited(area):
+	in_laser = false
+
+
+func _on_animated_sprite_2d_animation_finished():
+	Events.game_over.emit()
