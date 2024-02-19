@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://cdfnftpyyx1v8"]
+
+[ext_resource type="PackedScene" uid="uid://b8x5en1a2euqv" path="res://Menus/Menu.tscn" id="1_17p4u"]
+[ext_resource type="Theme" path="res://NokiaTheme.tres" id="2_l7wnd"]
+
+[node name="WinMenu" type="Node2D"]
+
+[node name="Menu" parent="." instance=ExtResource("1_17p4u")]
+enter_text = "Restart"
+
+[node name="Game over label" type="Label" parent="."]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = 15.5
+offset_top = 11.0
+offset_right = 68.5
+offset_bottom = 21.0
+grow_horizontal = 2
+theme = ExtResource("2_l7wnd")
+text = "You won!"
+horizontal_alignment = 1
