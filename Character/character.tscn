@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://j62xfgh712l"]
+[gd_scene load_steps=15 format=3 uid="uid://j62xfgh712l"]
 
 [ext_resource type="Texture2D" uid="uid://7w46ljc3436" path="res://Character/character.png" id="1_1uh0x"]
 [ext_resource type="Script" path="res://Character/character.gd" id="1_imqmy"]
 [ext_resource type="Script" path="res://Character/DEBUGCameraArea.gd" id="3_l3vuf"]
+[ext_resource type="AudioStream" uid="uid://cmylw114mcli8" path="res://Audio/Trix Soundpack/negative1.wav" id="4_agin6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcvdo"]
 atlas = ExtResource("1_1uh0x")
@@ -118,6 +119,9 @@ script = ExtResource("3_l3vuf")
 position = Vector2(2.08165e-12, 2.08165e-12)
 points = PackedVector2Array(-42, 24, 42, 24, 42, -24, -42, -24, -42, 24)
 width = 0.5
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_agin6")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/CharacterArea" to="." method="_on_character_area_area_entered"]

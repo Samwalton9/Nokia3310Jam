@@ -13,6 +13,7 @@ var right_blocked := false
 var in_laser := false
 
 @onready var state := INACTIVE
+@onready var death_audio := $AudioStreamPlayer
 
 
 func _ready():
@@ -46,6 +47,7 @@ func moved() -> void:
 	if in_laser:
 		state = INACTIVE
 		$AnimatedSprite2D.play()
+		death_audio.play()
 
 
 func _on_scene_transition_end():

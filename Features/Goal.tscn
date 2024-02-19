@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://n346wujdegm0"]
+[gd_scene load_steps=5 format=3 uid="uid://n346wujdegm0"]
 
 [ext_resource type="Script" path="res://Features/Goal.gd" id="1_1w786"]
 [ext_resource type="Texture2D" uid="uid://b8b5hbsd0pe6j" path="res://Features/Goal.png" id="1_d6qel"]
+[ext_resource type="AudioStream" uid="uid://d4j68fv0ue6ly" path="res://Audio/Trix Soundpack/blip12.wav" id="3_yvpgb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j8fdv"]
 size = Vector2(1, 1)
@@ -20,5 +21,8 @@ collision_mask = 4
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_j8fdv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_yvpgb")
 
 [connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]
