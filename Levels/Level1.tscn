@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://c4qc4b5xnu3el"]
+
+[ext_resource type="Texture2D" uid="uid://bfu8io0h1bjox" path="res://Levels/Level1.png" id="1_d5tww"]
+[ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_s5qqn"]
+[ext_resource type="PackedScene" uid="uid://bb3tc0636khl2" path="res://Enemies/laser.tscn" id="3_163vj"]
+[ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="4_4m8dk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ass"]
+size = Vector2(42, 2)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmgix"]
+size = Vector2(2, 14)
+
+[node name="Level1" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(80, 50)
+texture = ExtResource("1_d5tww")
+
+[node name="Character" parent="." instance=ExtResource("2_s5qqn")]
+position = Vector2(64, 50)
+
+[node name="Laser" parent="." instance=ExtResource("3_163vj")]
+position = Vector2(89, 45)
+speed = 2
+distance = 20
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(79, 44)
+shape = SubResource("RectangleShape2D_p3ass")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(79, 56)
+shape = SubResource("RectangleShape2D_p3ass")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(58, 50)
+shape = SubResource("RectangleShape2D_pmgix")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(100, 50)
+shape = SubResource("RectangleShape2D_pmgix")
+
+[node name="Goal" parent="." instance=ExtResource("4_4m8dk")]
+position = Vector2(94, 50)
