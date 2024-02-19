@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://btnha2sfauu1o"]
+
+[ext_resource type="Texture2D" uid="uid://bvj4dknhjay51" path="res://Levels/Level2.png" id="1_tvecx"]
+[ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_jhutu"]
+[ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="3_1o1rc"]
+[ext_resource type="PackedScene" uid="uid://cdfnftpyyx1v8" path="res://Menus/WinMenu.tscn" id="4_17q45"]
+[ext_resource type="PackedScene" uid="uid://bb3tc0636khl2" path="res://Enemies/laser.tscn" id="4_tcbfw"]
+
+[node name="Level2" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(80, 80)
+texture = ExtResource("1_tvecx")
+
+[node name="Character" parent="." instance=ExtResource("2_jhutu")]
+position = Vector2(53, 54)
+
+[node name="Goal" parent="." instance=ExtResource("3_1o1rc")]
+position = Vector2(83, 54)
+destination_scene = ExtResource("4_17q45")
+
+[node name="BottomLaser" parent="." instance=ExtResource("4_tcbfw")]
+position = Vector2(74, 79)
+distance = 13
+
+[node name="LeftLaser" parent="." instance=ExtResource("4_tcbfw")]
+position = Vector2(45, 76)
+rotation = -1.5708
+direction = "Right"
+distance = 15
+
+[node name="RightLaser" parent="." instance=ExtResource("4_tcbfw")]
+position = Vector2(91, 75)
+rotation = 1.5708
+distance = 15

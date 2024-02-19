@@ -4,7 +4,7 @@ var active := false
 
 @export_enum(
 	"Left",
-	"Right"
+	"Right",
 ) var direction : String = "Left"
 
 @export var speed : int = 1
@@ -14,7 +14,7 @@ var time_to_move : float = 0.0
 var delta_sum : float = 0.0
 var distance_travelled : int = 0
 
-const BASE_SPEED = 0.3
+const BASE_SPEED = 0.15
 
 
 func _ready():
@@ -28,9 +28,9 @@ func _physics_process(delta):
 		delta_sum += delta
 		if delta_sum > time_to_move:
 			if direction == "Left":
-				position.x -= 1
+				position -= Vector2(1,0).rotated(rotation)
 			elif direction == "Right":
-				position.x += 1
+				position += Vector2(1,0).rotated(rotation)
 
 			delta_sum = 0
 			distance_travelled += 1

@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_s5qqn"]
 [ext_resource type="PackedScene" uid="uid://bb3tc0636khl2" path="res://Enemies/laser.tscn" id="3_163vj"]
 [ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="4_4m8dk"]
-[ext_resource type="PackedScene" uid="uid://cdfnftpyyx1v8" path="res://Menus/WinMenu.tscn" id="5_4j0e4"]
+[ext_resource type="PackedScene" uid="uid://btnha2sfauu1o" path="res://Levels/Level2.tscn" id="5_342o7"]
 [ext_resource type="Theme" path="res://NokiaTheme.tres" id="5_ni4qq"]
 [ext_resource type="LabelSettings" uid="uid://bod3hrknilqr8" path="res://Font/LightTextLabelSettings.tres" id="6_hr8m1"]
 
@@ -25,7 +25,6 @@ position = Vector2(64, 50)
 
 [node name="Laser" parent="." instance=ExtResource("3_163vj")]
 position = Vector2(89, 45)
-speed = 2
 distance = 20
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -48,7 +47,7 @@ shape = SubResource("RectangleShape2D_pmgix")
 
 [node name="Goal" parent="." instance=ExtResource("4_4m8dk")]
 position = Vector2(94, 50)
-destination_scene = ExtResource("5_4j0e4")
+destination_scene = ExtResource("5_342o7")
 
 [node name="HelpTextLabel" type="Label" parent="."]
 offset_left = 25.0
