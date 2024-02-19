@@ -82,11 +82,11 @@ func _on_down_area_area_exited(_area):
 	down_blocked = false
 
 
-func _on_character_area_area_entered(area):
+func _on_character_area_area_entered(_area):
 	in_laser = true
 
 
-func _on_character_area_area_exited(area):
+func _on_character_area_area_exited(_area):
 	in_laser = false
 
 
