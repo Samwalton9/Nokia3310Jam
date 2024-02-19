@@ -32,7 +32,7 @@ func _on_transition_animation_animation_finished(anim_name):
 
 
 func _on_game_over():
-	Events.change_scene.emit("res://GameOver.tscn")
+	Events.change_scene.emit("res://Menus/GameOver.tscn")
 
 
 func change_to_level(level_scene_path : String) -> void:

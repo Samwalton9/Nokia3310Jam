@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b8x5en1a2euqv"]
 
-[ext_resource type="Script" path="res://MainMenu/MainMenu.gd" id="1_bpydp"]
+[ext_resource type="Script" path="res://Menus/MainMenu.gd" id="1_bpydp"]
 [ext_resource type="Texture2D" uid="uid://bsg8hds1al7by" path="res://Blank background.png" id="2_4kjyo"]
 [ext_resource type="Theme" path="res://NokiaTheme.tres" id="2_rlaum"]
 [ext_resource type="PackedScene" uid="uid://q5lie2qe2e2c" path="res://Font/enter_key.tscn" id="3_3pdrl"]
