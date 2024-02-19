@@ -19,6 +19,10 @@ func _physics_process(_delta):
 func _on_game_start() -> void:
 	tracking_character = true
 
+
 func _on_game_over() -> void:
 	tracking_character = false
+
+
+func reset_position() -> void:
 	position = original_position

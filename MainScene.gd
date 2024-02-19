@@ -20,8 +20,10 @@ func _on_change_scene(scene_path : String) -> void:
 
 
 func _on_transition_animation_animation_finished(anim_name):
+	# Transition start ended. Now full black screen.
 	if anim_name == "transition_start":
 		change_to_level(scene_path_for_transition)
+		$Camera2D.reset_position()
 
 		transition_anim.play("transition_end")
 
@@ -30,7 +32,7 @@ func _on_transition_animation_animation_finished(anim_name):
 
 
 func _on_game_over():
-	change_to_level("res://GameOver.tscn")
+	Events.change_scene.emit("res://GameOver.tscn")
 
 
 func change_to_level(level_scene_path : String) -> void:
