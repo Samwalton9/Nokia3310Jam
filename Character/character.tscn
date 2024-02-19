@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://j62xfgh712l"]
+[gd_scene load_steps=14 format=3 uid="uid://j62xfgh712l"]
 
 [ext_resource type="Texture2D" uid="uid://7w46ljc3436" path="res://Character/character.png" id="1_1uh0x"]
 [ext_resource type="Script" path="res://Character/character.gd" id="1_imqmy"]
+[ext_resource type="Script" path="res://Character/DEBUGCameraArea.gd" id="3_l3vuf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jcvdo"]
 atlas = ExtResource("1_1uh0x")
@@ -109,6 +110,14 @@ position = Vector2(-0.5, -2.08165e-12)
 position = Vector2(0.5, 3)
 shape = SubResource("RectangleShape2D_dauoy")
 debug_color = Color(0.752941, 0.133333, 0.298039, 0.419608)
+
+[node name="DEBUGCameraArea" type="Node2D" parent="."]
+script = ExtResource("3_l3vuf")
+
+[node name="Line2D" type="Line2D" parent="DEBUGCameraArea"]
+position = Vector2(2.08165e-12, 2.08165e-12)
+points = PackedVector2Array(-42, 24, 42, 24, 42, -24, -42, -24, -42, 24)
+width = 0.5
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/CharacterArea" to="." method="_on_character_area_area_entered"]
