@@ -1,55 +1,22 @@
-[gd_scene load_steps=6 format=3 uid="uid://b7goml4howlhv"]
+[gd_scene load_steps=3 format=3 uid="uid://b7goml4howlhv"]
 
-[ext_resource type="Script" path="res://Menus/GameOver.gd" id="1_jb06r"]
-[ext_resource type="Texture2D" uid="uid://bsg8hds1al7by" path="res://Blank background.png" id="1_u3mxr"]
+[ext_resource type="PackedScene" uid="uid://b8x5en1a2euqv" path="res://Menus/Menu.tscn" id="1_4irtx"]
 [ext_resource type="Theme" path="res://NokiaTheme.tres" id="2_nyjpy"]
-[ext_resource type="PackedScene" uid="uid://q5lie2qe2e2c" path="res://Font/enter_key.tscn" id="3_rx6tw"]
-[ext_resource type="AudioStream" uid="uid://drmk1jxllfdcp" path="res://Audio/Trix Soundpack/good3.wav" id="5_gej1c"]
 
 [node name="GameOver" type="Node2D"]
-script = ExtResource("1_jb06r")
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(42, 24)
-texture = ExtResource("1_u3mxr")
+[node name="Menu" parent="." instance=ExtResource("1_4irtx")]
+enter_text = "Restart"
 
-[node name="Control" type="Control" parent="."]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 84.0
-offset_bottom = 48.0
-
-[node name="Game over label" type="Label" parent="Control"]
-layout_mode = 1
+[node name="Game over label" type="Label" parent="."]
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
-offset_left = -26.5
+offset_left = 15.5
 offset_top = 11.0
-offset_right = 26.5
+offset_right = 68.5
 offset_bottom = 21.0
 grow_horizontal = 2
 theme = ExtResource("2_nyjpy")
 text = "Game over"
 horizontal_alignment = 1
-
-[node name="Restart label" type="Label" parent="Control"]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -12.0
-offset_top = -20.0
-offset_right = 28.0
-offset_bottom = 3.0
-grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("2_nyjpy")
-text = "Restart"
-
-[node name="EnterKey" parent="." instance=ExtResource("3_rx6tw")]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("5_gej1c")

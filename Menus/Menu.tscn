@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8x5en1a2euqv"]
+
+[ext_resource type="Script" path="res://Menus/Menu.gd" id="1_bpydp"]
+[ext_resource type="Texture2D" uid="uid://bsg8hds1al7by" path="res://Blank background.png" id="2_4kjyo"]
+[ext_resource type="Theme" path="res://NokiaTheme.tres" id="2_rlaum"]
+[ext_resource type="PackedScene" uid="uid://q5lie2qe2e2c" path="res://Font/enter_key.tscn" id="3_3pdrl"]
+[ext_resource type="AudioStream" uid="uid://drmk1jxllfdcp" path="res://Audio/Trix Soundpack/good3.wav" id="4_f0sq3"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_bpydp")
+
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(42, 24)
+texture = ExtResource("2_4kjyo")
+
+[node name="EnterKey" parent="." instance=ExtResource("3_3pdrl")]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 29.0
+offset_top = 26.0
+offset_right = 63.0
+offset_bottom = 39.0
+
+[node name="EnterLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 4
+anchor_top = 0.5
+anchor_bottom = 0.5
+offset_top = -5.0
+offset_right = 24.0
+offset_bottom = 5.0
+grow_vertical = 2
+theme = ExtResource("2_rlaum")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_f0sq3")

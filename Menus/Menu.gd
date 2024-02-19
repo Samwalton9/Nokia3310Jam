@@ -1,8 +1,12 @@
 extends Node2D
 
+@export var enter_text : String = "TEXT"
 
-# TODO: The game over screen is effectively the same as the main menu at this
-# point. If it remains that way I should probably consolidate.
+
+func _ready():
+	$Control/EnterLabel.text = enter_text
+
+
 func _process(_delta):
 	if Input.is_action_just_pressed("ui_accept"):
 		$AudioStreamPlayer.play(0.13) # Slight delay in the start of this .wav
