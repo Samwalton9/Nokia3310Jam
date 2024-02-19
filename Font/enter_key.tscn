@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://q5lie2qe2e2c"]
+
+[ext_resource type="Texture2D" uid="uid://c5jj42ywc8klq" path="res://Font/blinking_enter.png" id="1_7xcvs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_veoav"]
+atlas = ExtResource("1_7xcvs")
+region = Rect2(0, 0, 9, 11)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8654"]
+atlas = ExtResource("1_7xcvs")
+region = Rect2(9, 0, 9, 11)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1b2x5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_veoav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8654")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="EnterKey" type="AnimatedSprite2D"]
+position = Vector2(22.5, 32.5)
+sprite_frames = SubResource("SpriteFrames_1b2x5")
+autoplay = "default"
