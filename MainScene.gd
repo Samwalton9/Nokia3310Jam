@@ -14,6 +14,17 @@ func _ready():
 	loaded_level = $ActiveScene/MainMenu
 
 
+func _process(_delta):
+	if OS.is_debug_build():
+		# Feels like there should be a less hacky way to handle this.
+		if Input.is_action_just_pressed("one"):
+			Events.change_scene.emit("res://Levels/Level1.tscn")
+			Events.game_start.emit()
+		elif Input.is_action_just_pressed("two"):
+			Events.change_scene.emit("res://Levels/Level2.tscn")
+			Events.game_start.emit()
+
+
 func _on_change_scene(scene_path : String) -> void:
 	transition_anim.play("transition_start")
 	scene_path_for_transition = scene_path
