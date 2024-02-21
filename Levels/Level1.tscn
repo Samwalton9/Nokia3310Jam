@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://c4qc4b5xnu3el"]
+[gd_scene load_steps=8 format=3 uid="uid://c4qc4b5xnu3el"]
 
-[ext_resource type="Texture2D" uid="uid://bfu8io0h1bjox" path="res://Levels/Level1.png" id="1_d5tww"]
+[ext_resource type="TileSet" uid="uid://crwt5sv6qipty" path="res://Levels/TileSet.tres" id="2_jho38"]
 [ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_s5qqn"]
 [ext_resource type="PackedScene" uid="uid://bb3tc0636khl2" path="res://Enemies/laser.tscn" id="3_163vj"]
 [ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="4_4m8dk"]
@@ -8,52 +8,29 @@
 [ext_resource type="Theme" path="res://NokiaTheme.tres" id="5_ni4qq"]
 [ext_resource type="LabelSettings" uid="uid://bod3hrknilqr8" path="res://Font/LightTextLabelSettings.tres" id="6_hr8m1"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_p3ass"]
-size = Vector2(42, 2)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pmgix"]
-size = Vector2(2, 14)
-
 [node name="Level1" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(80, 50)
-texture = ExtResource("1_d5tww")
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("2_jho38")
+format = 2
+layer_0/tile_data = PackedInt32Array(327687, 0, 0, 327688, 65536, 0, 327689, 65536, 0, 327690, 65536, 0, 327691, 65536, 0, 327692, 131072, 0, 393228, 131072, 2, 393227, 65536, 2, 393226, 65536, 2, 393225, 65536, 2, 393224, 65536, 2, 393223, 0, 2)
 
 [node name="Character" parent="." instance=ExtResource("2_s5qqn")]
-position = Vector2(64, 50)
+position = Vector2(64, 48)
 
 [node name="Laser" parent="." instance=ExtResource("3_163vj")]
-position = Vector2(89, 45)
+position = Vector2(89, 42)
 distance = 20
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(79, 44)
-shape = SubResource("RectangleShape2D_p3ass")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(79, 56)
-shape = SubResource("RectangleShape2D_p3ass")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(58, 50)
-shape = SubResource("RectangleShape2D_pmgix")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(100, 50)
-shape = SubResource("RectangleShape2D_pmgix")
-
 [node name="Goal" parent="." instance=ExtResource("4_4m8dk")]
-position = Vector2(94, 50)
+position = Vector2(94, 48)
 destination_scene = ExtResource("5_342o7")
 
 [node name="HelpTextLabel" type="Label" parent="."]
 offset_left = 25.0
-offset_top = 30.0
+offset_top = 28.0
 offset_right = 56.0
-offset_bottom = 71.0
+offset_bottom = 69.0
 theme = ExtResource("5_ni4qq")
 theme_override_colors/font_color = Color(0.780392, 0.941176, 0.847059, 1)
 text = "Dont move in lasers"

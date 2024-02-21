@@ -54,35 +54,35 @@ func _on_scene_transition_end():
 	state = ACTIVE
 
 
-func _on_right_area_area_entered(_area):
+func _on_right_area_body_entered(_area):
 	right_blocked = true
 
 
-func _on_right_area_area_exited(_area):
+func _on_right_area_body_exited(_area):
 	right_blocked = false
 
 
-func _on_left_area_area_entered(_area):
+func _on_left_area_body_entered(_area):
 	left_blocked = true
 
 
-func _on_left_area_area_exited(_area):
+func _on_left_area_body_exited(_area):
 	left_blocked = false
 
 
-func _on_up_area_area_entered(_area):
+func _on_up_area_body_entered(_area):
 	up_blocked = true
 
 
-func _on_up_area_area_exited(_area):
+func _on_up_area_body_exited(_area):
 	up_blocked = false
 
 
-func _on_down_area_area_entered(_area):
+func _on_down_area_body_entered(_area):
 	down_blocked = true
 
 
-func _on_down_area_area_exited(_area):
+func _on_down_area_body_exited(_area):
 	down_blocked = false
 
 

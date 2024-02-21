@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://btnha2sfauu1o"]
 
-[ext_resource type="Texture2D" uid="uid://bvj4dknhjay51" path="res://Levels/Level2.png" id="1_tvecx"]
+[ext_resource type="TileSet" uid="uid://crwt5sv6qipty" path="res://Levels/TileSet.tres" id="1_c2ah0"]
 [ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_jhutu"]
 [ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="3_1o1rc"]
 [ext_resource type="PackedScene" uid="uid://cdfnftpyyx1v8" path="res://Menus/WinMenu.tscn" id="4_17q45"]
@@ -8,28 +8,29 @@
 
 [node name="Level2" type="Node2D"]
 
-[node name="Background" type="Sprite2D" parent="."]
-position = Vector2(80, 80)
-texture = ExtResource("1_tvecx")
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_c2ah0")
+format = 2
+layer_0/tile_data = PackedInt32Array(393223, 131072, 0, 393222, 0, 0, 458758, 0, 1, 458759, 131072, 1, 524294, 0, 1, 524295, 131072, 1, 589830, 0, 1, 655366, 0, 1, 720902, 0, 2, 720903, 65536, 2, 720904, 65536, 2, 720905, 65536, 2, 720906, 131072, 2, 655370, 131072, 1, 589834, 131072, 1, 524298, 131072, 1, 458762, 131072, 1, 393226, 131072, 0, 393225, 0, 0, 458761, 0, 1, 524297, 0, 1, 589833, 0, 1, 655369, 393216, 2, 655368, 65536, 0, 655367, 327680, 2, 589831, 131072, 1)
 
 [node name="Character" parent="." instance=ExtResource("2_jhutu")]
-position = Vector2(53, 54)
+position = Vector2(56, 55)
 
 [node name="Goal" parent="." instance=ExtResource("3_1o1rc")]
-position = Vector2(83, 54)
+position = Vector2(79, 55)
 destination_scene = ExtResource("4_17q45")
 
 [node name="BottomLaser" parent="." instance=ExtResource("4_tcbfw")]
-position = Vector2(74, 79)
+position = Vector2(72, 82)
 distance = 13
 
 [node name="LeftLaser" parent="." instance=ExtResource("4_tcbfw")]
-position = Vector2(45, 76)
+position = Vector2(50, 79)
 rotation = -1.5708
 direction = "Right"
 distance = 15
 
 [node name="RightLaser" parent="." instance=ExtResource("4_tcbfw")]
-position = Vector2(91, 75)
+position = Vector2(86, 78)
 rotation = 1.5708
 distance = 15
