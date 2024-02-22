@@ -3,29 +3,29 @@
 [ext_resource type="Script" path="res://Enemies/laser.gd" id="1_0wena"]
 [ext_resource type="Texture2D" uid="uid://c2n1lypp2o8qu" path="res://Enemies/laser.png" id="1_au4tb"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ejfbq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jq8t"]
 atlas = ExtResource("1_au4tb")
-region = Rect2(0, 0, 3, 20)
+region = Rect2(0, 0, 3, 13)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_gityf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_2bejw"]
 atlas = ExtResource("1_au4tb")
-region = Rect2(3, 0, 3, 20)
+region = Rect2(3, 0, 3, 13)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mo4jo"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_cs8ta"]
 atlas = ExtResource("1_au4tb")
-region = Rect2(6, 0, 3, 20)
+region = Rect2(6, 0, 3, 13)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_y08sc"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ejfbq")
+"texture": SubResource("AtlasTexture_8jq8t")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_gityf")
+"texture": SubResource("AtlasTexture_2bejw")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_mo4jo")
+"texture": SubResource("AtlasTexture_cs8ta")
 }],
 "loop": true,
 "name": &"default",
@@ -33,13 +33,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_81myi"]
-size = Vector2(1, 20)
+size = Vector2(1, 13)
 
 [node name="Laser" type="Node2D"]
 script = ExtResource("1_0wena")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0.5, 10)
+position = Vector2(0.5, 6.5)
 sprite_frames = SubResource("SpriteFrames_y08sc")
 autoplay = "default"
 
@@ -48,5 +48,5 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(0.5, 10)
+position = Vector2(0.5, 6.5)
 shape = SubResource("RectangleShape2D_81myi")
