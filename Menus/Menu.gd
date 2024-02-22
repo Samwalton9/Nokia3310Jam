@@ -12,4 +12,3 @@ func _process(_delta):
 		$AudioStreamPlayer.play(0.13) # Slight delay in the start of this .wav
 
 		Events.change_scene.emit("res://Levels/Level1.tscn")
-		Events.game_start.emit()

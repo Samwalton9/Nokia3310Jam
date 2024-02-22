@@ -96,7 +96,7 @@ func _on_character_area_area_exited(_area):
 
 func _on_animated_sprite_2d_animation_finished():
 	Events.game_end.emit()
-	Events.game_over.emit()
+	Events.change_scene.emit(Globals.current_level)
 
 
 func _on_game_end():

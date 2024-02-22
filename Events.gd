@@ -8,6 +8,4 @@ signal scene_transition_end()
 
 signal game_start()
 
-signal game_over()
-
 signal game_end()

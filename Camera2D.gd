@@ -7,7 +7,7 @@ func _ready():
 	original_position = position
 
 	Events.game_start.connect(_on_game_start)
-	Events.game_over.connect(_on_game_end)
+	Events.game_end.connect(_on_game_end)
 
 
 func _physics_process(_delta):

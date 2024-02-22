@@ -9,7 +9,6 @@ var loaded_level : Node = null
 
 func _ready():
 	Events.change_scene.connect(_on_change_scene)
-	Events.game_over.connect(_on_game_over)
 
 	loaded_level = $ActiveScene/MainMenu
 
@@ -19,13 +18,10 @@ func _process(_delta):
 		# Feels like there should be a less hacky way to handle this.
 		if Input.is_action_just_pressed("one"):
 			Events.change_scene.emit("res://Levels/Level1.tscn")
-			Events.game_start.emit()
 		elif Input.is_action_just_pressed("two"):
 			Events.change_scene.emit("res://Levels/Level2.tscn")
-			Events.game_start.emit()
 		elif Input.is_action_just_pressed("three"):
 			Events.change_scene.emit("res://Levels/Level3.tscn")
-			Events.game_start.emit()
 
 
 func _on_change_scene(scene_path : String) -> void:
@@ -43,10 +39,6 @@ func _on_transition_animation_animation_finished(anim_name):
 
 	if anim_name == "transition_end":
 		Events.scene_transition_end.emit()
-
-
-func _on_game_over():
-	Events.change_scene.emit("res://Menus/GameOver.tscn")
 
 
 func change_to_level(level_scene_path : String) -> void:
