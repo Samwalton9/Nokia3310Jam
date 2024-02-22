@@ -14,14 +14,15 @@ position = Vector2(42, 24)
 texture = ExtResource("2_4kjyo")
 
 [node name="EnterKey" parent="." instance=ExtResource("3_3pdrl")]
+position = Vector2(22.5, 37.5)
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 29.0
-offset_top = 26.0
+offset_top = 31.0
 offset_right = 63.0
-offset_bottom = 39.0
+offset_bottom = 44.0
 
 [node name="EnterLabel" type="Label" parent="Control"]
 layout_mode = 1

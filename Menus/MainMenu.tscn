@@ -1,8 +1,29 @@
-[gd_scene load_steps=2 format=3 uid="uid://c3qaepddwxgje"]
+[gd_scene load_steps=3 format=3 uid="uid://c3qaepddwxgje"]
 
 [ext_resource type="PackedScene" uid="uid://b8x5en1a2euqv" path="res://Menus/Menu.tscn" id="1_t2e5g"]
+[ext_resource type="Theme" path="res://NokiaTheme.tres" id="2_ak43t"]
 
 [node name="MainMenu" type="Node2D"]
 
 [node name="Menu" parent="." instance=ExtResource("1_t2e5g")]
 enter_text = "Start"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 84.0
+offset_bottom = 48.0
+
+[node name="LaserLimboLabel" type="Label" parent="Control"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -29.5
+offset_top = 11.0
+offset_right = 29.5
+offset_bottom = 34.0
+grow_horizontal = 2
+theme = ExtResource("2_ak43t")
+text = "Laser Limbo"
+horizontal_alignment = 1
