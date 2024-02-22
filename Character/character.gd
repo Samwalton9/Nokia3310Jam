@@ -13,7 +13,7 @@ var right_blocked := false
 var in_laser := false
 
 @onready var state := INACTIVE
-@onready var death_audio := $AudioStreamPlayer
+@onready var death_audio := $DeathAudio
 
 
 func _ready():
@@ -43,6 +43,7 @@ func _physics_process(_delta):
 func moved() -> void:
 	Globals.character_position = position
 	Events.moved.emit()
+	$MoveAudio.play()
 
 	if in_laser:
 		state = INACTIVE
