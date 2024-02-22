@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cx2c53j5to4nd"]
+
+[ext_resource type="Texture2D" uid="uid://cq8bhqoshsql0" path="res://Enemies/K9.png" id="1_nwc0u"]
+[ext_resource type="Script" path="res://Enemies/K9.gd" id="1_stryp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jyd2g"]
+atlas = ExtResource("1_nwc0u")
+region = Rect2(0, 0, 13, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dvm36"]
+atlas = ExtResource("1_nwc0u")
+region = Rect2(13, 0, 13, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7n3bp"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jyd2g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dvm36")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="K9" type="Node2D"]
+script = ExtResource("1_stryp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(0.5, 2.08165e-12)
+sprite_frames = SubResource("SpriteFrames_7n3bp")
+autoplay = "default"
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PackedVector2Array(2, -1, -6, -9, -6, 9, 2, 2, 7, 2, 7, -1)

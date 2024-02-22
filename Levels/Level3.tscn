@@ -1,0 +1,42 @@
+[gd_scene load_steps=7 format=3 uid="uid://ctkuqb11v0bnt"]
+
+[ext_resource type="TileSet" uid="uid://crwt5sv6qipty" path="res://Levels/TileSet.tres" id="1_0inaa"]
+[ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_4skfg"]
+[ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="3_k4tl6"]
+[ext_resource type="PackedScene" uid="uid://bb3tc0636khl2" path="res://Enemies/laser.tscn" id="4_i2u1x"]
+[ext_resource type="PackedScene" uid="uid://cdfnftpyyx1v8" path="res://Menus/WinMenu.tscn" id="4_u2tfr"]
+[ext_resource type="PackedScene" uid="uid://cx2c53j5to4nd" path="res://Enemies/K9.tscn" id="5_lf44r"]
+
+[node name="Level3" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -42.0
+offset_top = -30.0
+offset_right = 155.0
+offset_bottom = 101.0
+color = Color(0.262745, 0.321569, 0.239216, 1)
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = ExtResource("1_0inaa")
+format = 2
+layer_0/tile_data = PackedInt32Array(131074, 0, 0, 196610, 0, 1, 196611, 65536, 1, 131075, 65536, 0, 131076, 65536, 0, 196612, 65536, 1, 196613, 65536, 1, 131077, 65536, 0, 131078, 65536, 0, 196614, 65536, 1, 196615, 131072, 1, 131079, 131072, 0, 262150, 393216, 1, 262151, 327680, 2, 327686, 0, 2, 327687, 65536, 2, 262152, 65536, 0, 327688, 65536, 2, 327689, 65536, 2, 327690, 65536, 2, 327691, 131072, 2, 262155, 131072, 0, 262154, 65536, 0, 262153, 65536, 0, 262146, 0, 2, 262147, 65536, 2, 262148, 65536, 2, 262149, 65536, 2)
+
+[node name="Character" parent="." instance=ExtResource("2_4skfg")]
+position = Vector2(24, 27)
+
+[node name="Goal" parent="." instance=ExtResource("3_k4tl6")]
+position = Vector2(88, 39)
+destination_scene = ExtResource("4_u2tfr")
+
+[node name="Laser" parent="." instance=ExtResource("4_i2u1x")]
+position = Vector2(83, 34)
+distance = 20
+
+[node name="Laser2" parent="." instance=ExtResource("4_i2u1x")]
+position = Vector2(63, 34)
+direction = "Right"
+distance = 20
+
+[node name="K9" parent="." instance=ExtResource("5_lf44r")]
+position = Vector2(54, 28)
+distance = 17

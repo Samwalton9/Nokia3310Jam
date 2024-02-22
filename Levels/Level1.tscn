@@ -10,6 +10,11 @@
 
 [node name="Level1" type="Node2D"]
 
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 161.0
+offset_bottom = 99.0
+color = Color(0.262745, 0.321569, 0.239216, 1)
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("2_jho38")
 format = 2

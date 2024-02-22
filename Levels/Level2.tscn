@@ -3,10 +3,15 @@
 [ext_resource type="TileSet" uid="uid://crwt5sv6qipty" path="res://Levels/TileSet.tres" id="1_c2ah0"]
 [ext_resource type="PackedScene" uid="uid://j62xfgh712l" path="res://Character/character.tscn" id="2_jhutu"]
 [ext_resource type="PackedScene" uid="uid://n346wujdegm0" path="res://Features/Goal.tscn" id="3_1o1rc"]
-[ext_resource type="PackedScene" uid="uid://cdfnftpyyx1v8" path="res://Menus/WinMenu.tscn" id="4_17q45"]
+[ext_resource type="PackedScene" uid="uid://ctkuqb11v0bnt" path="res://Levels/Level3.tscn" id="4_nvosg"]
 [ext_resource type="PackedScene" uid="uid://bb3tc0636khl2" path="res://Enemies/laser.tscn" id="4_tcbfw"]
 
 [node name="Level2" type="Node2D"]
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 142.0
+offset_bottom = 160.0
+color = Color(0.262745, 0.321569, 0.239216, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_c2ah0")
@@ -18,11 +23,11 @@ position = Vector2(56, 55)
 
 [node name="Goal" parent="." instance=ExtResource("3_1o1rc")]
 position = Vector2(79, 55)
-destination_scene = ExtResource("4_17q45")
+destination_scene = ExtResource("4_nvosg")
 
 [node name="BottomLaser" parent="." instance=ExtResource("4_tcbfw")]
-position = Vector2(72, 82)
-distance = 13
+position = Vector2(73, 82)
+distance = 11
 
 [node name="LeftLaser" parent="." instance=ExtResource("4_tcbfw")]
 position = Vector2(50, 79)

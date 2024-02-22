@@ -23,6 +23,9 @@ func _process(_delta):
 		elif Input.is_action_just_pressed("two"):
 			Events.change_scene.emit("res://Levels/Level2.tscn")
 			Events.game_start.emit()
+		elif Input.is_action_just_pressed("three"):
+			Events.change_scene.emit("res://Levels/Level3.tscn")
+			Events.game_start.emit()
 
 
 func _on_change_scene(scene_path : String) -> void:
